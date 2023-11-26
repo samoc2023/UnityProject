@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
    
     private Rigidbody playerRb;
     public float gravityModifier = 1.5f;
+    public float jumpGravity;
     public float jumpForce;
     //public float forwardInput;
 
@@ -14,7 +16,7 @@ public class PlayerController : MonoBehaviour
 
     private Animator playerAnim;
     //public CharacterController characterController;
-    public Vector3 moveDirection;
+    private Vector3 moveDirection;
     
 
 
@@ -32,6 +34,7 @@ public class PlayerController : MonoBehaviour
     {
         playerRb = GetComponent<Rigidbody>();
         Physics.gravity *= gravityModifier;
+        Physics.gravity *= jumpGravity;
         playerAnim = GetComponent<Animator>();
         //characterController = GetComponent<CharacterController>();
        
@@ -42,10 +45,11 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.z > -20)
+        /*if (transform.position.z > -20)
         {
             transform.position = new Vector3(transform.position.x, transform.position.y, -21);
         }
+        */
 
         //get input
         float horizontalInput = Input.GetAxis("Horizontal");
@@ -86,26 +90,30 @@ public class PlayerController : MonoBehaviour
         // While space is pressed , float up
         if (Input.GetKey(KeyCode.Space) && isOnGround)
         {
-
-            playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            isOnGround = false;
+            playerRb.AddForce(Vector3.up * jumpForce * jumpGravity, ForceMode.Impulse);
 
 
             playerAnim.SetBool("Static_b", true);
 
 
             playerAnim.SetTrigger("Jump_trig");
-            isOnGround = false;
+            
 
         }
 
+        
 
 
 
 
 
 
+    }
 
-
+    private static void OnEndIsland()
+    {
+        SceneManager.LoadScene(2);
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -120,6 +128,11 @@ public class PlayerController : MonoBehaviour
             Destroy(gameObject);
             Debug.Log("Game Over!");
 
+        }
+
+        if (collision.gameObject.CompareTag("endIsland"))
+        {
+            OnEndIsland();
         }
     }
 

@@ -141,6 +141,7 @@ GameObject:
   - component: {fileID: 36562933270484812}
   - component: {fileID: 8600440561373136564}
   - component: {fileID: 1414630913485963421}
+  - component: {fileID: 2065255569824844184}
   m_Layer: 0
   m_Name: Demon 3
   m_TagString: Untagged
@@ -199,6 +200,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd81e0e1d8995924dacc4424c8f49141, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startPosition: {x: 0, y: 0, z: 0}
+  moveToPoints: []
+  currentPoint: {x: 0, y: 0, z: 0}
+  moveSpeed: 0
+  pointSelection: 0
 --- !u!54 &8600440561373136564
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -247,6 +253,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 4.241652, y: 4.776928, z: 2.7325938}
   m_Center: {x: -0.03656321, y: 1.8884656, z: 0.86630464}
+--- !u!114 &2065255569824844184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 524849174663330820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95ff11bfebf1b804182c3beeafe810f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
+  yRange: 0
+  move: 1
 --- !u!1 &652713967364788902
 GameObject:
   m_ObjectHideFlags: 0
@@ -1551,6 +1572,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd81e0e1d8995924dacc4424c8f49141, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startPosition: {x: 0, y: 0, z: 0}
+  moveToPoints: []
+  currentPoint: {x: 0, y: 0, z: 0}
+  moveSpeed: 0
+  pointSelection: 0
 --- !u!95 &2997833359725032980
 Animator:
   serializedVersion: 5
