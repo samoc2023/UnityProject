@@ -6,22 +6,19 @@ public class PlayerController : MonoBehaviour
 {
    
     private Rigidbody playerRb;
-    private float gravityModifier = 7f;
+    public float gravityModifier = 1.5f;
     public float jumpForce;
-    public float speed = 40;
+    public float speed;
     public float turnSpeed;
-    public float horizontalInput;
-    public float forwardInput;
 
-    private Animator playerAnim;
-    private CharacterController characterController;
-    private Vector3 moveDirection;
+    public Animator playerAnim;
+    public CharacterController characterController;
+    public Vector3 moveDirection;
     
 
 
     public bool gameOver;
     public bool isOnGround;
-    private bool isLowEnough;
 
    
 
@@ -84,15 +81,18 @@ public class PlayerController : MonoBehaviour
         // While space is pressed , float up
         if (Input.GetKey(KeyCode.Space) && isOnGround)
         {
+            isOnGround = false;
+
             playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
 
-            isOnGround = false;
+            
             playerAnim.SetBool("Static_b", true);
 
 
             playerAnim.SetTrigger("Jump_trig");
         }
 
+        
         
 
        
@@ -106,7 +106,7 @@ public class PlayerController : MonoBehaviour
     {
        
         // if player hits Ground
-        if (other.gameObject.CompareTag("Death") && !gameOver)
+        if (other.gameObject.CompareTag("Death") && gameOver)
         {
             gameOver = true;
             Debug.Log("Game Over!");

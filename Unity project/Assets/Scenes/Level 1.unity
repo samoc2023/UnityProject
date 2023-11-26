@@ -2153,6 +2153,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 100000, guid: f147a01ef442b2345a3546109476c690, type: 3}
       insertIndex: -1
       addedObject: {fileID: 898941051}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: f147a01ef442b2345a3546109476c690, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 898941054}
   m_SourcePrefab: {fileID: 100100000, guid: f147a01ef442b2345a3546109476c690, type: 3}
 --- !u!1 &898941046 stripped
 GameObject:
@@ -2219,13 +2222,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c890cafa57a118d4c8479cc6a8519b01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 100
-  speed: 2500
+  gravityModifier: 1.5
+  jumpForce: 40
+  speed: 50
   turnSpeed: 50
-  horizontalInput: 10
-  forwardInput: 800
+  playerAnim: {fileID: 0}
+  characterController: {fileID: 0}
+  moveDirection: {x: 0, y: 0, z: 0}
   gameOver: 1
   isOnGround: 1
+--- !u!114 &898941054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 898941046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df622faf2d9b2334e9534977393bf3da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerRB: {fileID: 0}
+  jumpamount: 35
+  gravityScale: 10
+  fallingGravityScale: 40
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -2366,7 +2387,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6682a1e8e5de2ea4a861dae13fa43648, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  plane: {fileID: 0}
+  user: {fileID: 898941046}
 --- !u!1 &969159036
 GameObject:
   m_ObjectHideFlags: 0
@@ -3612,6 +3633,22 @@ PrefabInstance:
     - target: {fileID: 347410650456069437, guid: d7217716c6118f84fa9290e9273d4ba7, type: 3}
       propertyPath: m_UseGravity
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3886037271487709733, guid: d7217716c6118f84fa9290e9273d4ba7, type: 3}
+      propertyPath: m_Size.x
+      value: 1.0908043
+      objectReference: {fileID: 0}
+    - target: {fileID: 3886037271487709733, guid: d7217716c6118f84fa9290e9273d4ba7, type: 3}
+      propertyPath: m_Size.z
+      value: 1.2005892
+      objectReference: {fileID: 0}
+    - target: {fileID: 3886037271487709733, guid: d7217716c6118f84fa9290e9273d4ba7, type: 3}
+      propertyPath: m_Center.x
+      value: -0.0036810546
+      objectReference: {fileID: 0}
+    - target: {fileID: 3886037271487709733, guid: d7217716c6118f84fa9290e9273d4ba7, type: 3}
+      propertyPath: m_Center.z
+      value: 0.0025715737
       objectReference: {fileID: 0}
     - target: {fileID: 4085253827327064800, guid: d7217716c6118f84fa9290e9273d4ba7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5911,6 +5948,22 @@ PrefabInstance:
     - target: {fileID: 347410650456069437, guid: d7217716c6118f84fa9290e9273d4ba7, type: 3}
       propertyPath: m_UseGravity
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3886037271487709733, guid: d7217716c6118f84fa9290e9273d4ba7, type: 3}
+      propertyPath: m_Size.x
+      value: 1.1398869
+      objectReference: {fileID: 0}
+    - target: {fileID: 3886037271487709733, guid: d7217716c6118f84fa9290e9273d4ba7, type: 3}
+      propertyPath: m_Size.z
+      value: 1.2931684
+      objectReference: {fileID: 0}
+    - target: {fileID: 3886037271487709733, guid: d7217716c6118f84fa9290e9273d4ba7, type: 3}
+      propertyPath: m_Center.x
+      value: -0.020860218
+      objectReference: {fileID: 0}
+    - target: {fileID: 3886037271487709733, guid: d7217716c6118f84fa9290e9273d4ba7, type: 3}
+      propertyPath: m_Center.z
+      value: -0.03343166
       objectReference: {fileID: 0}
     - target: {fileID: 4085253827327064800, guid: d7217716c6118f84fa9290e9273d4ba7, type: 3}
       propertyPath: m_LocalPosition.x
