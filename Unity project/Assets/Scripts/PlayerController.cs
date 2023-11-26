@@ -8,17 +8,18 @@ public class PlayerController : MonoBehaviour
     private Rigidbody playerRb;
     public float gravityModifier = 1.5f;
     public float jumpForce;
-    public float speed;
-    public float turnSpeed;
+    //public float forwardInput;
 
-    public Animator playerAnim;
-    public CharacterController characterController;
+    public float speed;
+
+    private Animator playerAnim;
+    //public CharacterController characterController;
     public Vector3 moveDirection;
     
 
 
     public bool gameOver;
-    public bool isOnGround;
+    public bool isOnGround = true;
 
    
 
@@ -32,7 +33,7 @@ public class PlayerController : MonoBehaviour
         playerRb = GetComponent<Rigidbody>();
         Physics.gravity *= gravityModifier;
         playerAnim = GetComponent<Animator>();
-        characterController = GetComponent<CharacterController>();
+        //characterController = GetComponent<CharacterController>();
        
 
 
@@ -85,35 +86,40 @@ public class PlayerController : MonoBehaviour
         // While space is pressed , float up
         if (Input.GetKey(KeyCode.Space) && isOnGround)
         {
-            isOnGround = false;
 
             playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
 
-            
+
             playerAnim.SetBool("Static_b", true);
 
 
             playerAnim.SetTrigger("Jump_trig");
+            isOnGround = false;
+
         }
 
-        
-        
 
-       
+
+
+
 
 
 
 
     }
 
-    private void OnCollisionEnter(Collision other)
+    private void OnCollisionEnter(Collision collision)
     {
-       
+        isOnGround = true;
+
+
         // if player hits Ground
-        if (other.gameObject.CompareTag("Death") && gameOver)
+        if (collision.gameObject.CompareTag("Death") && gameOver)
         {
             gameOver = true;
+            Destroy(gameObject);
             Debug.Log("Game Over!");
+
         }
     }
 

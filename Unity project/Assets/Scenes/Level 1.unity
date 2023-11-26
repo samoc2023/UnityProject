@@ -915,6 +915,26 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &858233595 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 524849174663330820, guid: 43431b0ea168cd0479f29a260683aea2, type: 3}
+  m_PrefabInstance: {fileID: 3911217340419045020}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &858233601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 858233595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95ff11bfebf1b804182c3beeafe810f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
+  yRange: 1135
+  move: 1
 --- !u!1001 &864326574
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1149,9 +1169,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 100000, guid: f147a01ef442b2345a3546109476c690, type: 3}
       insertIndex: -1
       addedObject: {fileID: 898941051}
-    - targetCorrespondingSourceObject: {fileID: 100000, guid: f147a01ef442b2345a3546109476c690, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 898941054}
   m_SourcePrefab: {fileID: 100100000, guid: f147a01ef442b2345a3546109476c690, type: 3}
 --- !u!1 &898941046 stripped
 GameObject:
@@ -1219,30 +1236,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gravityModifier: 1.5
-  jumpForce: 80
-  speed: 50
-  turnSpeed: 50
-  playerAnim: {fileID: 0}
-  characterController: {fileID: 0}
+  jumpForce: 60
+  speed: 90
   moveDirection: {x: 0, y: 0, z: 0}
   gameOver: 1
   isOnGround: 1
---- !u!114 &898941054
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 898941046}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df622faf2d9b2334e9534977393bf3da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerRB: {fileID: 0}
-  jumpamount: 35
-  gravityScale: 10
-  fallingGravityScale: 40
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1331,7 +1329,7 @@ Transform:
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
   m_LocalRotation: {x: 0.007388731, y: 0.020246504, z: 0.009207434, w: 0.99972534}
-  m_LocalPosition: {x: -867, y: 1404, z: -3651}
+  m_LocalPosition: {x: -1555, y: 1391, z: -3623}
   m_LocalScale: {x: 1.7598912, y: 1, z: 1.60137}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3760,7 +3758,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2722208852363774517, guid: 43431b0ea168cd0479f29a260683aea2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1135
+      value: 537
       objectReference: {fileID: 0}
     - target: {fileID: 2722208852363774517, guid: 43431b0ea168cd0479f29a260683aea2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3805,7 +3803,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 524849174663330820, guid: 43431b0ea168cd0479f29a260683aea2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 858233601}
   m_SourcePrefab: {fileID: 100100000, guid: 43431b0ea168cd0479f29a260683aea2, type: 3}
 --- !u!114 &3925490709187885040
 MonoBehaviour:
@@ -3820,16 +3821,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
---- !u!54 &3925490709187885041 stripped
-Rigidbody:
-  m_CorrespondingSourceObject: {fileID: 3209429929829854070, guid: 70cf4a67ea9c3704396840b5a4976038, type: 3}
-  m_PrefabInstance: {fileID: 3258879773389459614}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &3925490709187885044 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 2937440494750206661, guid: 70cf4a67ea9c3704396840b5a4976038, type: 3}
-  m_PrefabInstance: {fileID: 3258879773389459614}
-  m_PrefabAsset: {fileID: 0}
+  xRange: -1494
+  move: 1
 --- !u!114 &3925490709187885046
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3837,13 +3830,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3258879773389459615}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3f365e5d4d9e52d4a94671a10e658ea2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyRb: {fileID: 3925490709187885041}
-  enemyAnim: {fileID: 3925490709187885044}
+  playerAnim: {fileID: 0}
   attackKey: 8
   dashDistance: 5
 --- !u!114 &6335820457711228242
@@ -3859,6 +3851,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  xRange: 3394
+  move: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
