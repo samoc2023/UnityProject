@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ground
   - Focal Point
+  - Death
   layers:
   - Default
   - TransparentFX

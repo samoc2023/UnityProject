@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
 {
    
     private Rigidbody playerRb;
-    private float gravityModifier = 2.0f;
+    private float gravityModifier = 7f;
     public float jumpForce;
     public float speed = 40;
     public float turnSpeed;
@@ -14,10 +14,13 @@ public class PlayerController : MonoBehaviour
     public float forwardInput;
 
     private Animator playerAnim;
+    private CharacterController characterController;
+    private Vector3 moveDirection;
+    
 
 
     public bool gameOver;
-    public bool isOnGround = true;
+    public bool isOnGround;
     private bool isLowEnough;
 
    
@@ -32,6 +35,8 @@ public class PlayerController : MonoBehaviour
         playerRb = GetComponent<Rigidbody>();
         Physics.gravity *= gravityModifier;
         playerAnim = GetComponent<Animator>();
+        characterController = GetComponent<CharacterController>();
+       
 
 
     }
@@ -39,39 +44,56 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        horizontalInput = Input.GetAxis("Horizontal");
+
+        //get input
+        float horizontalInput = Input.GetAxis("Horizontal");
+        float verticalInput = Input.GetAxis("Vertical");
+        Vector3 movementDirection = new Vector3(horizontalInput * speed * Time.deltaTime, 0, verticalInput * speed * Time.deltaTime);
+        //float magnitude = Mathf.Clamp01(moveDirection.magnitude) * speed;
+        movementDirection.Normalize();
+        playerRb.MovePosition(transform.position + movementDirection);
+
+
+        //moveDirection = new Vector3(horizontal, 0, vertical);
+
+        //Animations
+
+
+
+
         //forwardInput = Input.GetAxis("Vertical");
 
-       
+
         //move player forward
-        if (Input.GetKey(KeyCode.RightArrow)){
-         transform.Translate(Vector3.forward * Time.deltaTime * speed);
+        if (movementDirection != Vector3.zero)
+        {
+            //movementDirection = Vector3.forward * Time.deltaTime * speed;
+            playerAnim.SetBool("Static_b", true);
             
         }
 
-        //Turn Player
-        if (Input.GetKey(KeyCode.UpArrow))
-        {
-            // Rotates the car based on horizontal input
-            transform.Rotate(Vector3.up, turnSpeed * horizontalInput * Time.deltaTime);
-        }
+        else
+            playerAnim.SetBool("Static_b", false);
 
-        if (Input.GetKey(KeyCode.DownArrow))
-        {
-            // Rotates the car based on horizontal input
-            transform.Rotate(Vector3.down, turnSpeed * horizontalInput * Time.deltaTime);
-        }
+        
 
+
+       
 
 
         // While space is pressed , float up
         if (Input.GetKey(KeyCode.Space) && isOnGround)
         {
             playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+
             isOnGround = false;
+            playerAnim.SetBool("Static_b", true);
+
 
             playerAnim.SetTrigger("Jump_trig");
         }
+
+        
 
        
 
@@ -80,13 +102,13 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter(Collision other)
     {
-            isOnGround = true;
+       
         // if player hits Ground
-        if (collision.gameObject.CompareTag("Ground") && !gameOver)
+        if (other.gameObject.CompareTag("Death") && !gameOver)
         {
-
+            gameOver = true;
             Debug.Log("Game Over!");
         }
     }
