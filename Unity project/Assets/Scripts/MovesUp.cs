@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class moveForward : MonoBehaviour
+public class MovesUp : MonoBehaviour
 {
-    public float speed;
-    public float xRange;
+    public float speed = 10;
+    public float yRange;
     public bool move = true;
     // Start is called before the first frame update
     private Animator enemyAnim;
@@ -17,26 +17,27 @@ public class moveForward : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
         OnAnimatorMove();
 
     }
 
     private void OnAnimatorMove()
     {
-        if(transform.position.x < xRange)
+        if (transform.position.y < yRange)
         {
             move = false;
         }
-        if (move == true) {
-            transform.Translate(Vector3.right * speed * Time.deltaTime);
+        if (move == true)
+        {
+            transform.Translate(Vector3.down * speed * Time.deltaTime);
         }
         else if (move == false)
         {
-         transform.Translate(new Vector3(0, 0, 0) * speed * Time.deltaTime);
-          
+            transform.Translate(new Vector3(0, 0, 1) * speed * Time.deltaTime);
 
-            }
+
+        }
     }
 
 }
