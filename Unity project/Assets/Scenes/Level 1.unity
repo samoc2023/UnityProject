@@ -1180,15 +1180,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f147a01ef442b2345a3546109476c690, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2351
+      value: 4160
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f147a01ef442b2345a3546109476c690, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 946
+      value: 987.8
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f147a01ef442b2345a3546109476c690, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -337
+      value: -323
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f147a01ef442b2345a3546109476c690, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1234,6 +1234,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.98232
       objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: f147a01ef442b2345a3546109476c690, type: 3}
+      propertyPath: m_Avatar
+      value: 
+      objectReference: {fileID: 9000000, guid: c72c97e952bf7834b85e6164373d310d, type: 3}
     - target: {fileID: 9500000, guid: f147a01ef442b2345a3546109476c690, type: 3}
       propertyPath: m_Controller
       value: 
@@ -1319,7 +1323,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gravityModifier: 4
   jumpGravity: 4
-  jumpForce: 60
+  jumpForce: 95
   speed: 120
   gameOver: 1
   isOnGround: 1
@@ -1411,7 +1415,7 @@ Transform:
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
   m_LocalRotation: {x: -0.016431175, y: 0.020021394, z: 0.009687181, w: 0.9996176}
-  m_LocalPosition: {x: -1721, y: 1516, z: -3620}
+  m_LocalPosition: {x: 4122, y: 1625, z: -3856}
   m_LocalScale: {x: 1.7598912, y: 1, z: 1.60137}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4028,8 +4032,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c55734f8bb420b4481490224f0b0c92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  xRange: -1409
+  speed: 30
+  xRange: -1311
   move: 1
 --- !u!114 &3925490709187885046
 MonoBehaviour:

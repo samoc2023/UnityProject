@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class moveForward : MonoBehaviour
 {
-    public float speed = 13;
+    public float speed;
     public float xRange;
     public bool move = true;
     // Start is called before the first frame update
@@ -33,7 +33,7 @@ public class moveForward : MonoBehaviour
         }
         else if (move == false)
         {
-         transform.Translate(new Vector3(0, 0, 1) * speed * Time.deltaTime);
+         transform.Translate(new Vector3(0, 0, 0) * speed * Time.deltaTime);
           
 
             }
