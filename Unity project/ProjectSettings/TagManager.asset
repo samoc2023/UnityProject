@@ -8,6 +8,8 @@ TagManager:
   - Focal Point
   - Death
   - endIsland
+  - powerup
+  - Enemy
   layers:
   - Default
   - TransparentFX

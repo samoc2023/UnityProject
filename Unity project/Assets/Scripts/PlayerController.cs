@@ -125,8 +125,9 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Death") && gameOver)
         {
             gameOver = true;
-            Destroy(gameObject);
+            playerAnim.SetBool("Dead_b", true);
             Debug.Log("Game Over!");
+             
 
         }
 
