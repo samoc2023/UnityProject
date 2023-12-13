@@ -10,18 +10,12 @@ public class PlayerController : MonoBehaviour
     public float gravityModifier = 1.5f;
     public float jumpGravity;
     public float jumpForce;
-    //public float forwardInput;
-
     public float speed;
-
     private Animator playerAnim;
     //public CharacterController characterController;
     private Vector3 moveDirection;
-    
-
-
     public bool gameOver;
-    public bool isOnGround = true;
+    private bool isOnGround;
 
    
 
@@ -54,7 +48,7 @@ public class PlayerController : MonoBehaviour
         //get input
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
-        Vector3 movementDirection = new Vector3(horizontalInput * speed * Time.deltaTime, 0, verticalInput * speed * Time.deltaTime);
+        Vector3 movementDirection = new Vector3(horizontalInput * speed * Time.deltaTime, 0);
         //float magnitude = Mathf.Clamp01(moveDirection.magnitude) * speed;
         movementDirection.Normalize();
         playerRb.MovePosition(transform.position + movementDirection);
@@ -75,58 +69,63 @@ public class PlayerController : MonoBehaviour
         {
             //movementDirection = Vector3.forward * Time.deltaTime * speed;
             playerAnim.SetBool("Static_b", true);
-            
+
         }
 
-        else
-            playerAnim.SetBool("Static_b", false);
-
+        else if (movementDirection == Vector3.zero) { playerAnim.SetBool("Static_b", false); }
+           
         
 
-
-       
-
-
-        // While space is pressed , float up
+         // While space is pressed , float up
         if (Input.GetKey(KeyCode.Space) && isOnGround)
         {
+            moveDirection = Vector3.zero;
             isOnGround = false;
             playerRb.AddForce(Vector3.up * jumpForce * jumpGravity, ForceMode.Impulse);
-
-
-            playerAnim.SetBool("Static_b", true);
-
+           
 
             playerAnim.SetTrigger("Jump_trig");
             
 
         }
 
-        
+        if (Input.GetKey(KeyCode.J))
+        {
+         
+      
 
 
-
-
+        }
 
 
     }
+
+
+    
 
     private static void OnEndIsland()
     {
         SceneManager.LoadScene(2);
     }
 
+
+
     private void OnCollisionEnter(Collision collision)
     {
-        isOnGround = true;
+        //DETECTS IF PLAYER IS ON GROUND
+        if (collision.gameObject.tag == "Ground")
+        {
+            isOnGround = true;
+        }
+
 
 
         // if player hits Ground
-        if (collision.gameObject.CompareTag("Death") && gameOver)
+         if (collision.gameObject.CompareTag("Death"))
         {
+            playerAnim.SetBool("Death_b", true);
             gameOver = true;
             Debug.Log("Game Over!");
-            Destroy(gameObject);
 
 
         }
