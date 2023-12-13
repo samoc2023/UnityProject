@@ -7,23 +7,18 @@ public class PlayerController : MonoBehaviour
 {
    
     private Rigidbody playerRb;
-    public float gravityModifier = 1.5f;
+    public float gravityModifier;
     public float jumpGravity;
     public float jumpForce;
     public float speed;
     private Animator playerAnim;
-    //public CharacterController characterController;
+    //private CharacterController characterController;
+    //private BoxCollider boxCollider;
     private Vector3 moveDirection;
     public bool gameOver;
     private bool isOnGround;
-
    
 
-
-
-
-
-    // Start is called before the first frame update
     void Start()
     {
         playerRb = GetComponent<Rigidbody>();
@@ -31,6 +26,7 @@ public class PlayerController : MonoBehaviour
         Physics.gravity *= jumpGravity;
         playerAnim = GetComponent<Animator>();
         //characterController = GetComponent<CharacterController>();
+        //boxCollider = GetComponent<BoxCollider>();
        
 
 
@@ -39,6 +35,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+       
         /*if (transform.position.z > -20)
         {
             transform.position = new Vector3(transform.position.x, transform.position.y, -21);
@@ -73,35 +70,80 @@ public class PlayerController : MonoBehaviour
         }
 
         else if (movementDirection == Vector3.zero) { playerAnim.SetBool("Static_b", false); }
-           
-        
 
-         // While space is pressed , float up
+        
+      
+     
+        // While space is pressed - Jump
         if (Input.GetKey(KeyCode.Space) && isOnGround)
         {
             moveDirection = Vector3.zero;
             isOnGround = false;
             playerRb.AddForce(Vector3.up * jumpForce * jumpGravity, ForceMode.Impulse);
-           
 
+      
             playerAnim.SetTrigger("Jump_trig");
             
 
         }
 
+       
+
+        // While shoot button is pressed - reload
         if (Input.GetKey(KeyCode.J))
         {
-         
-      
+            playerAnim.SetTrigger("Shoot_trig");
 
 
         }
+        
+
+
+
+
+
 
 
     }
 
+   
 
+
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        //DETECTS IF PLAYER IS ON GROUND
+        if (collision.gameObject.tag != "Ground")
+        {
+            isOnGround = false;
+            playerRb.AddForce(Vector3.down * 0 * jumpGravity * Time.deltaTime);
+
+
+        }
+        else
+            isOnGround = true;
+/*
+        if (collision.gameObject.tag != "Ground")
+        {
+            isOnGround = false;
+            playerRb.AddForce(Vector3.down  * jumpGravity, ForceMode.Impulse);
+
+        }
+*/
+
+
+        // if player hits Ground
+        if (collision.gameObject.CompareTag("Death"))
+        {
+            playerAnim.SetBool("Death_b", true);
+            gameOver = true;
+            Debug.Log("Game Over!");
+            transform.position = new Vector3(transform.position.x, 40, transform.position.z);
+         }
+
+        if (collision.gameObject.CompareTag("endIsland")) { OnEndIsland();}
     
+    }
 
     private static void OnEndIsland()
     {
@@ -110,42 +152,14 @@ public class PlayerController : MonoBehaviour
 
 
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        //DETECTS IF PLAYER IS ON GROUND
-        if (collision.gameObject.tag == "Ground")
-        {
-            isOnGround = true;
-        }
-
-
-
-        // if player hits Ground
-         if (collision.gameObject.CompareTag("Death"))
-        {
-            playerAnim.SetBool("Death_b", true);
-            gameOver = true;
-            Debug.Log("Game Over!");
-
-
-        }
-
-        if (collision.gameObject.CompareTag("endIsland"))
-        {
-            OnEndIsland();
-        }
-    }
-
-
-
-       
-
-        
 
 
 
 
 
-    
+
+
+
+
 
 }
