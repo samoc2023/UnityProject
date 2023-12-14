@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4625923886776944}
   - component: {fileID: 33339967630197796}
   - component: {fileID: 23564663788724664}
+  - component: {fileID: 5124014926532804984}
   m_Layer: 0
   m_Name: Ground_Tile_Hex_FloatingIsland_01
   m_TagString: endIsland
@@ -83,3 +84,24 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &5124014926532804984
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1301643505922104}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 5.9586315, y: 5.030673, z: 5.0001826}
+  m_Center: {x: -0.030679934, y: -2.5152423, z: 0.00000041894833}

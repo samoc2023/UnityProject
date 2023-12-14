@@ -34,7 +34,7 @@ public class moveUp : MonoBehaviour
         }
         else if (move == false)
         {
-            transform.Translate(new Vector3(0, 0, 1) * speed * Time.deltaTime);
+            transform.Translate(new Vector3(0, 0, 0) * speed * Time.deltaTime);
 
 
         }
