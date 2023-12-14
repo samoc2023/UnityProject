@@ -144,6 +144,7 @@ public class PlayerController : MonoBehaviour
             playerAnim.SetBool("Death_b", true);
             gameOver = true;
             Debug.Log("Game Over!");
+            print("gameover"); 
             transform.position = new Vector3(transform.position.x, 40, transform.position.z);
         }
 
@@ -159,10 +160,24 @@ public class PlayerController : MonoBehaviour
         {
             hasPowerup = true;
             Destroy(other.gameObject);
-            playerRb.AddForce(Vector3.up * 7, ForceMode.Impulse);
+            playerRb.AddForce(Vector3.up * 90, ForceMode.Impulse);
+
         }
 
+        if (other.gameObject.CompareTag("falling"))
+        {
+            playerRb.AddForce(Vector3.down *4, ForceMode.Impulse);
+            print("falling");
+        }
+    }
 
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.CompareTag("falling"))
+        {
+            playerRb.AddForce(Vector3.down * 4, ForceMode.Impulse);
+            print("falling");
+        }
     }
 
 

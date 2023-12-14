@@ -10,6 +10,7 @@ TagManager:
   - endIsland
   - powerup
   - Enemy
+  - falling
   layers:
   - Default
   - TransparentFX
