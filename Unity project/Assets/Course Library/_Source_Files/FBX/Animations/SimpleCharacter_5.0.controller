@@ -4586,9 +4586,6 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 6
-    m_ConditionEvent: WeaponType_int
-    m_EventTreshold: 1
   - m_ConditionMode: 1
     m_ConditionEvent: Shoot_trig
     m_EventTreshold: 0
