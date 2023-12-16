@@ -31,17 +31,16 @@ public class fireWeapon : MonoBehaviour
        
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        if (other.gameObject.CompareTag("bullet"))
+
+        if (collision.gameObject.CompareTag("bullet"))
         {
 
-            Destroy(other.gameObject);
+            Destroy(collision.gameObject);
 
 
         }
-
-
     }
 
 }

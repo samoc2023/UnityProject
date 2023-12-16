@@ -123,6 +123,8 @@ public class PlayerController : MonoBehaviour
 
 
 
+
+
         }
         else
             isOnGround= false;
@@ -161,12 +163,14 @@ public class PlayerController : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-       if (other.gameObject.CompareTag("powerup") && isFalling)
+       if (other.gameObject.CompareTag("powerup"))
         {
             isFalling = false;
             hasPowerup = true;
             Destroy(other.gameObject);
             playerRb.AddForce(Vector3.up * 80 , ForceMode.Impulse);
+            print("power");
+
 
         }
 

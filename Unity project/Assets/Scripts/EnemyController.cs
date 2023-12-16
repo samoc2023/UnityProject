@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
+    private GameObject enemyObject;
     private Rigidbody enemyRb;
     private Animator enemyAnim;
     public int health = 100;
@@ -43,7 +44,7 @@ public class EnemyController : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("bullet")) {
-            Destroy(gameObject);
+            Destroy(collision.gameObject);
 
         }
     }
