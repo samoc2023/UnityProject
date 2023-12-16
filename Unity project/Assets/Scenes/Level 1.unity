@@ -1794,6 +1794,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4625923886776944, guid: 961be46ca9a355943ae3f65c47741bb0, type: 3}
   m_PrefabInstance: {fileID: 864326574}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &896007376 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4514957597940178078, guid: 599d1439b11388e4e9d60ce2bf2f854b, type: 3}
+  m_PrefabInstance: {fileID: 668260166108845382}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &896007378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 896007376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f1c8c647a2fc5145ad6a6eccd92c261, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 173474133280212330, guid: 0c6222e998e82684f9c25fbdb4761ac0, type: 3}
 --- !u!1 &945681718
 GameObject:
   m_ObjectHideFlags: 0
@@ -2570,6 +2588,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8863849285899680718, guid: 07e128809c1841441974533e2772dd13, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1125966263}
+    - targetCorrespondingSourceObject: {fileID: 8863849285899680718, guid: 07e128809c1841441974533e2772dd13, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1125966269}
   m_SourcePrefab: {fileID: 100100000, guid: 07e128809c1841441974533e2772dd13, type: 3}
 --- !u!1 &1125966262 stripped
 GameObject:
@@ -2591,6 +2612,20 @@ MonoBehaviour:
   speed: 19
   xRange: -1579
   move: 1
+--- !u!114 &1125966269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1125966262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fe7bacd6a5d40746b26847348d799b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  attackDamage: 10
 --- !u!1001 &1189148176
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4855,6 +4890,10 @@ PrefabInstance:
       propertyPath: gravityModifier
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 28656159583665544, guid: 599d1439b11388e4e9d60ce2bf2f854b, type: 3}
+      propertyPath: projectilePrefab
+      value: 
+      objectReference: {fileID: 173474133280212330, guid: 0c6222e998e82684f9c25fbdb4761ac0, type: 3}
     - target: {fileID: 2598331746128662138, guid: 599d1439b11388e4e9d60ce2bf2f854b, type: 3}
       propertyPath: m_Mass
       value: 1
@@ -4943,6 +4982,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -0.05
       objectReference: {fileID: 0}
+    - target: {fileID: 4514957597940178078, guid: 599d1439b11388e4e9d60ce2bf2f854b, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 4514957597940178162, guid: 599d1439b11388e4e9d60ce2bf2f854b, type: 3}
       propertyPath: m_Name
       value: Player
@@ -4980,6 +5023,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4514957597940178078, guid: 599d1439b11388e4e9d60ce2bf2f854b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 896007378}
     - targetCorrespondingSourceObject: {fileID: 4514957597940178164, guid: 599d1439b11388e4e9d60ce2bf2f854b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 417494380}

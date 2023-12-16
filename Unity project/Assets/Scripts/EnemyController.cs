@@ -39,4 +39,12 @@ public class EnemyController : MonoBehaviour
         // Perform any actions when the enemy dies
         Destroy(gameObject);
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player")) {
+            enemyAnim.SetInteger("State", 1);
+
+        }
+    }
 }

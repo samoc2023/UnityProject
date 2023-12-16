@@ -11,6 +11,8 @@ TagManager:
   - powerup
   - Enemy
   - falling
+  - bullet
+  - gun
   layers:
   - Default
   - TransparentFX

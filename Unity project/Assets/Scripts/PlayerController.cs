@@ -19,7 +19,14 @@ public class PlayerController : MonoBehaviour
     public bool gameOver;
     public bool isOnGround;
     public bool hasPowerup;
-   
+
+    private float fireRate = 1.0f;
+    private float nextFire = 0.0f;
+
+
+
+
+
 
     void Start()
     {
@@ -27,17 +34,17 @@ public class PlayerController : MonoBehaviour
         Physics.gravity *= gravityModifier;
         Physics.gravity *= jumpGravity;
         playerAnim = GetComponent<Animator>();
-        //characterController = GetComponent<CharacterController>();
-        //boxCollider = GetComponent<BoxCollider>();
-       
+    //characterController = GetComponent<CharacterController>();
+    //boxCollider = GetComponent<BoxCollider>();
 
 
-    }
+
+}
 
     // Update is called once per frame
     void Update()
     {
-       
+
         /*if (transform.position.z > -20)
         {
             transform.position = new Vector3(transform.position.x, transform.position.y, -21);
@@ -47,7 +54,7 @@ public class PlayerController : MonoBehaviour
         //get input
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
-        Vector3 movementDirection = new Vector3(horizontalInput * speed , 0);
+        Vector3 movementDirection = new Vector3(horizontalInput * speed, 0);
         //float magnitude = Mathf.Clamp01(moveDirection.magnitude) * speed;
         //movementDirection.Normalize();
         playerRb.MovePosition(transform.position + movementDirection);
@@ -71,38 +78,36 @@ public class PlayerController : MonoBehaviour
 
         }
 
-        else if (movementDirection == Vector3.zero) {
-            playerAnim.SetBool("Static_b", false); 
+        else if (movementDirection == Vector3.zero)
+        {
+            playerAnim.SetBool("Static_b", false);
         }
 
-        
-      
-     
+
+
+
         // While space is pressed - Jump
         if (Input.GetKey(KeyCode.Space) && isOnGround)
         {
             moveDirection = Vector3.zero;
             isOnGround = false;
-            playerRb.AddForce(Vector3.up  * jumpForce * jumpGravity, ForceMode.Impulse);
+            playerRb.AddForce(Vector3.up * jumpForce * jumpGravity, ForceMode.Impulse);
 
-      
+
             playerAnim.SetTrigger("Jump_trig");
             playerAnim.SetBool("Static_b", false);
-
-
-
         }
-
 
 
         // While shoot button is pressed - reload
-        if (Input.GetKey(KeyCode.J))
+        if (Input.GetKey(KeyCode.J) && Time.time > nextFire)
         {
-            playerAnim.SetTrigger("Shoot_trig");
 
+            playerAnim.SetTrigger("Shoot_trig");
+            //nextFire = Time.time + fireRate;
+            //Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
 
         }
-        
 
     }
 
