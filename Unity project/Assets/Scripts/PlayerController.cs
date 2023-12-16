@@ -98,6 +98,7 @@ public class PlayerController : MonoBehaviour
         // While shoot button is pressed - reload
         if (Input.GetKey(KeyCode.J))
         {
+            playerAnim.SetInteger("WeaponType_int", 1);
             playerAnim.SetTrigger("Shoot_trig");
 
 
@@ -182,8 +183,6 @@ public class PlayerController : MonoBehaviour
     }
 
 
-
-    
 
 
     private static void OnEndIsland()
