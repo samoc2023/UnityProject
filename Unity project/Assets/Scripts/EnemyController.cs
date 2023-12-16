@@ -2,7 +2,20 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
+    private Rigidbody enemyRb;
+    private Animator enemyAnim;
     public int health = 100;
+
+    private void Start()
+    {
+        enemyRb = GetComponent<Rigidbody>();
+        enemyAnim = GetComponent<Animator>();
+    }
+
+    private void Update()
+    {
+        
+    }
 
     public void TakeDamage(int damage)
     {
