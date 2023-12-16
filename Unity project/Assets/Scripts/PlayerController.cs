@@ -20,8 +20,9 @@ public class PlayerController : MonoBehaviour
     public bool isOnGround;
     public bool hasPowerup;
 
-    private float fireRate = 1.0f;
-    private float nextFire = 0.0f;
+    public float powerJump = 10;
+    private bool isFalling;
+
 
 
 
@@ -100,13 +101,11 @@ public class PlayerController : MonoBehaviour
 
 
         // While shoot button is pressed - reload
-        if (Input.GetKey(KeyCode.J) && Time.time > nextFire)
+        if (Input.GetKey(KeyCode.J))
         {
 
             playerAnim.SetTrigger("Shoot_trig");
-            //nextFire = Time.time + fireRate;
-            //Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
-
+          
         }
 
     }
@@ -162,11 +161,12 @@ public class PlayerController : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-       if (other.gameObject.CompareTag("powerup"))
+       if (other.gameObject.CompareTag("powerup") && isFalling)
         {
+            isFalling = false;
             hasPowerup = true;
             Destroy(other.gameObject);
-            playerRb.AddForce(Vector3.up * 90, ForceMode.Impulse);
+            playerRb.AddForce(Vector3.up * 80 , ForceMode.Impulse);
 
         }
 
@@ -181,6 +181,7 @@ public class PlayerController : MonoBehaviour
 
         if (other.gameObject.CompareTag("falling"))
         {
+            isFalling = true;
             playerRb.AddForce(Vector3.down *3, ForceMode.Impulse);
             print("falling");
         }

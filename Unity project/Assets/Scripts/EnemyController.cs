@@ -42,8 +42,8 @@ public class EnemyController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Player")) {
-            enemyAnim.SetInteger("State", 1);
+        if (collision.gameObject.CompareTag("bullet")) {
+            Destroy(gameObject);
 
         }
     }
