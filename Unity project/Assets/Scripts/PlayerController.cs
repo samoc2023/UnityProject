@@ -20,8 +20,12 @@ public class PlayerController : MonoBehaviour
     public bool isOnGround;
     public bool hasPowerup;
 
+    public float fallSpeed;
     public float powerJump = 10;
     private bool isFalling;
+    public AudioClip jumpSound;
+    public AudioClip weaponsSound;
+    private AudioSource playerAudio;
 
 
 
@@ -35,12 +39,13 @@ public class PlayerController : MonoBehaviour
         Physics.gravity *= gravityModifier;
         Physics.gravity *= jumpGravity;
         playerAnim = GetComponent<Animator>();
-    //characterController = GetComponent<CharacterController>();
-    //boxCollider = GetComponent<BoxCollider>();
+        playerAudio = GetComponent<AudioSource>();
+        //characterController = GetComponent<CharacterController>();
+        //boxCollider = GetComponent<BoxCollider>();
 
 
 
-}
+    }
 
     // Update is called once per frame
     void Update()
@@ -97,6 +102,7 @@ public class PlayerController : MonoBehaviour
 
             playerAnim.SetTrigger("Jump_trig");
             playerAnim.SetBool("Static_b", false);
+            playerAudio.PlayOneShot(jumpSound, 1.5f);
         }
 
 
@@ -105,8 +111,10 @@ public class PlayerController : MonoBehaviour
         {
 
             playerAnim.SetTrigger("Shoot_trig");
-          
+            playerAudio.PlayOneShot(weaponsSound, 1.5f);
         }
+
+       
 
     }
 
@@ -146,7 +154,7 @@ public class PlayerController : MonoBehaviour
 
 
         // if player hits Ground
-        else if (collision.gameObject.CompareTag("Death"))
+        else if (collision.gameObject.CompareTag("Death") && gameOver)
         {
             playerAnim.SetBool("Death_b", true);
             gameOver = true;
@@ -186,7 +194,7 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("falling"))
         {
             isFalling = true;
-            playerRb.AddForce(Vector3.down *3, ForceMode.Impulse);
+            playerRb.AddForce(Vector3.down * 1000, ForceMode.Impulse);
             print("falling");
         }
     }
