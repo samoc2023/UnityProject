@@ -869,7 +869,7 @@ MonoBehaviour:
   gravityModifier: 1
   jumpGravity: 2
   jumpForce: 20
-  speed: 40
+  speed: 10
   gameOver: 1
   isOnGround: 1
   hasPowerup: 0
@@ -5765,8 +5765,10 @@ PrefabInstance:
       value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents:
+    - {fileID: 0}
     - {fileID: 6298836710313556575, guid: 599d1439b11388e4e9d60ce2bf2f854b, type: 3}
     - {fileID: 28656159583665544, guid: 599d1439b11388e4e9d60ce2bf2f854b, type: 3}
+    - {fileID: 2717330881234811937, guid: 599d1439b11388e4e9d60ce2bf2f854b, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:

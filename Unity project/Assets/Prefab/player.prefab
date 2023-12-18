@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100052, guid: f4209d51d1ad0434299f2d498ee076ba, type: 3}
       propertyPath: m_Name
-      value: ToonSoldier_WW2_demo 1
+      value: player
       objectReference: {fileID: 0}
     - target: {fileID: 100052, guid: f4209d51d1ad0434299f2d498ee076ba, type: 3}
       propertyPath: m_TagString
@@ -108,10 +108,7 @@ PrefabInstance:
       addedObject: {fileID: 4075607278209752418}
     - targetCorrespondingSourceObject: {fileID: 100052, guid: f4209d51d1ad0434299f2d498ee076ba, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 28656159583665544}
-    - targetCorrespondingSourceObject: {fileID: 100052, guid: f4209d51d1ad0434299f2d498ee076ba, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 6298836710313556575}
+      addedObject: {fileID: 2717330881234811937}
   m_SourcePrefab: {fileID: 100100000, guid: f4209d51d1ad0434299f2d498ee076ba, type: 3}
 --- !u!1 &4514957597940178162 stripped
 GameObject:
@@ -166,7 +163,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.0993383, y: 2.559737, z: 0.99999946}
   m_Center: {x: 0.049669012, y: 1.3080221, z: -2.0621498e-11}
---- !u!114 &28656159583665544
+--- !u!114 &2717330881234811937
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -175,25 +172,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 4514957597940178162}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c890cafa57a118d4c8479cc6a8519b01, type: 3}
+  m_Script: {fileID: 11500000, guid: acd7267d079eae54d9ac7fe92ba875ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   gravityModifier: 0
-  jumpGravity: 2
-  jumpForce: 200
-  gameOver: 1
-  isOnGround: 0
-  hasPowerup: 1
---- !u!114 &6298836710313556575
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4514957597940178162}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aae0f24b660a986409988d053b5edbbe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  jumpGravity: 0
+  jumpForce: 0
   speed: 0
+  gameOver: 0
+  isOnGround: 0
+  hasPowerup: 0
+  fallSpeed: 0
+  powerJump: 10
+  jumpSound: {fileID: 8300000, guid: 0f7d0b7c3397f4dac91f20e8a77d2d57, type: 3}
+  weaponsSound: {fileID: 8300000, guid: 4bcde6de2166e41e284ec46d8a01fb90, type: 3}
