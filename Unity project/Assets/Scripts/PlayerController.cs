@@ -186,8 +186,12 @@ public class PlayerController : MonoBehaviour
         {
             InteractWithEnemy(other.gameObject);
         }
-    
 
+        if (other.gameObject.CompareTag("falling"))
+        {
+            isFalling = true;
+            playerRb.AddForce(Vector3.down * 5, ForceMode.Impulse);
+        }
 
 
 
@@ -202,7 +206,8 @@ public class PlayerController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("falling"))
         {
-            isFalling = true;
+            isOnGround = false;
+            //isFalling = true;
             playerRb.AddForce(Vector3.down * fallSpeed, ForceMode.Impulse);
         }
     }
