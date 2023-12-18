@@ -1961,8 +1961,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 434.22968, y: 1, z: 1}
-  m_Center: {x: -65.1283, y: 0, z: 0}
+  m_Size: {x: 415.56213, y: 0.9032788, z: 1}
+  m_Center: {x: -55.794537, y: -0.048360627, z: 0}
 --- !u!4 &945681720
 Transform:
   m_ObjectHideFlags: 0
@@ -3910,6 +3910,59 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1648527241
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1648527243}
+  - component: {fileID: 1648527242}
+  m_Layer: 0
+  m_Name: falling (1)
+  m_TagString: Limit
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &1648527242
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1648527241}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 415.56213, y: 0.26406455, z: 1}
+  m_Center: {x: -55.794537, y: -0.36796778, z: 0}
+--- !u!4 &1648527243
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1648527241}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2050.8, y: 1768, z: -338.25272}
+  m_LocalScale: {x: 2.5484083, y: 713.1833, z: 517.3832}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1698560385
 GameObject:
   m_ObjectHideFlags: 0
@@ -5820,4 +5873,5 @@ SceneRoots:
   - {fileID: 1125966261}
   - {fileID: 3258879773389459614}
   - {fileID: 945681720}
+  - {fileID: 1648527243}
   - {fileID: 58476461}

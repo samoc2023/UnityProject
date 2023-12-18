@@ -191,11 +191,19 @@ public class PlayerController : MonoBehaviour
 
 
 
+        if (other.gameObject.CompareTag("limit"))
+        {
+            isFalling = true;
+            playerRb.AddForce(Vector3.down * fallSpeed, ForceMode.Impulse);
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
         if (other.gameObject.CompareTag("falling"))
         {
             isFalling = true;
             playerRb.AddForce(Vector3.down * fallSpeed, ForceMode.Impulse);
-            print("falling");
         }
     }
 
