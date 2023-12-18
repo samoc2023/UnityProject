@@ -5106,11 +5106,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 28656159583665544, guid: 599d1439b11388e4e9d60ce2bf2f854b, type: 3}
       propertyPath: fallSpeed
-      value: 10
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 28656159583665544, guid: 599d1439b11388e4e9d60ce2bf2f854b, type: 3}
       propertyPath: jumpForce
-      value: 7
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 28656159583665544, guid: 599d1439b11388e4e9d60ce2bf2f854b, type: 3}
       propertyPath: jumpSound
