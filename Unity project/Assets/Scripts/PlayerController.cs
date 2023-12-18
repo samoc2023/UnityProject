@@ -128,6 +128,7 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.tag == "Ground")
         {
             isOnGround = true;
+            print("on ground");
 
 
 
