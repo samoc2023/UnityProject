@@ -194,7 +194,7 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("falling"))
         {
             isFalling = true;
-            playerRb.AddForce(Vector3.down * 1000, ForceMode.Impulse);
+            playerRb.AddForce(Vector3.down * fallSpeed, ForceMode.Impulse);
             print("falling");
         }
     }
