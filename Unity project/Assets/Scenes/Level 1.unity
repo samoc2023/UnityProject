@@ -854,6 +854,29 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &263362325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 263362313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acd7267d079eae54d9ac7fe92ba875ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gravityModifier: 1
+  jumpGravity: 2
+  jumpForce: 20
+  speed: 40
+  gameOver: 1
+  isOnGround: 1
+  hasPowerup: 0
+  fallSpeed: 45
+  powerJump: 10
+  jumpSound: {fileID: 8300000, guid: 0f7d0b7c3397f4dac91f20e8a77d2d57, type: 3}
+  weaponsSound: {fileID: 8300000, guid: 4bcde6de2166e41e284ec46d8a01fb90, type: 3}
 --- !u!1 &319513354
 GameObject:
   m_ObjectHideFlags: 0
@@ -5743,12 +5766,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6298836710313556575, guid: 599d1439b11388e4e9d60ce2bf2f854b, type: 3}
+    - {fileID: 28656159583665544, guid: 599d1439b11388e4e9d60ce2bf2f854b, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 4514957597940178162, guid: 599d1439b11388e4e9d60ce2bf2f854b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 263362319}
+    - targetCorrespondingSourceObject: {fileID: 4514957597940178162, guid: 599d1439b11388e4e9d60ce2bf2f854b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 263362325}
     - targetCorrespondingSourceObject: {fileID: 4514957597940178078, guid: 599d1439b11388e4e9d60ce2bf2f854b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 896007378}
