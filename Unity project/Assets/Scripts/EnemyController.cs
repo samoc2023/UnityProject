@@ -2,22 +2,23 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    private GameObject enemyObject;
     private Rigidbody enemyRb;
     private Animator enemyAnim;
     public int health = 100;
     public int attackDamage = 10;
 
-    private void Start()
+    void Start()
     {
         enemyRb = GetComponent<Rigidbody>();
         enemyAnim = GetComponent<Animator>();
+        gameObject.tag = "enemy";
     }
 
-    private void Update()
+    void Update()
     {
-        // You can add attack logic here based on your game requirements
+
     }
+
 
     public void TakeDamage(int damage)
     {
@@ -25,7 +26,7 @@ public class EnemyController : MonoBehaviour
 
         if (health <= 0)
         {
-            Die();
+
         }
     }
 
@@ -35,16 +36,16 @@ public class EnemyController : MonoBehaviour
         // For example, you can deal damage to the player or perform other actions
     }
 
-    void Die()
-    {
-        // Perform any actions when the enemy dies
-        Destroy(gameObject);
-    }
 
-    private void OnCollisionEnter(Collision collision)
+
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.CompareTag("bullet")) {
-            Destroy(collision.gameObject);
+        if (other.gameObject.CompareTag("bullet"))
+        {
+
+
+            print("not destryed");
+            Destroy(gameObject);
 
         }
     }

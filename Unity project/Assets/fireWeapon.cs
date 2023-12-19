@@ -5,7 +5,7 @@ using UnityEngine;
 public class FireWeapon : MonoBehaviour
 {
     public GameObject projectilePrefab;
-    public LayerMask enemyLayer;  // Assign the enemy layer in the Unity Editor
+    //public LayerMask enemyLayer;  // Assign the enemy layer in the Unity Editor
 
     private Animator playerAnim;
     private float fireRate = 1.0f;
@@ -13,7 +13,7 @@ public class FireWeapon : MonoBehaviour
 
     void Start()
     {
-        // You can initialize any variables or components here
+       
     }
 
     void Update()
@@ -34,25 +34,6 @@ public class FireWeapon : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Bullet"))
-        {
-            // Assuming bullets have a tag "Bullet"
-            Destroy(collision.gameObject);
-            
-            // Check if the collided object is an enemy
-            if (IsEnemy(collision.gameObject))
-            {
-                // Enemy is hit, make it disappear or do something else
-                Destroy(collision.gameObject); // This will destroy the enemy, adjust as needed
-            }
-        }
-    }
-
-    private bool IsEnemy(GameObject obj)
-    {
-        // Check if the collided object is on the enemy layer
-        return (enemyLayer.value & (1 << obj.layer)) != 0;
-    }
+   
+    
 }

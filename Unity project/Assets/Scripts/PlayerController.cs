@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -22,7 +21,7 @@ public class PlayerController : MonoBehaviour
 
     public float fallSpeed;
     public float powerJump = 10;
-    private bool isFalling;
+    //private bool isFalling;
     public AudioClip jumpSound;
     public AudioClip weaponsSound;
     private AudioSource playerAudio;
@@ -174,7 +173,7 @@ public class PlayerController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("powerup"))
         {
-            isFalling = false;
+            //isFalling = false;
             hasPowerup = true;
             Destroy(other.gameObject);
             playerRb.AddForce(Vector3.up * 80, ForceMode.Impulse);
@@ -190,7 +189,7 @@ public class PlayerController : MonoBehaviour
 
         if (other.gameObject.CompareTag("falling"))
         {
-            isFalling = true;
+            //isFalling = true;
             playerRb.AddForce(Vector3.down * 5, ForceMode.Impulse);
         }
 
@@ -198,7 +197,7 @@ public class PlayerController : MonoBehaviour
 
         if (other.gameObject.CompareTag("limit"))
         {
-            isFalling = true;
+            //isFalling = true;
             playerRb.AddForce(Vector3.down * fallSpeed, ForceMode.Impulse);
         }
     }

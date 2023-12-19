@@ -9,11 +9,11 @@ TagManager:
   - Death
   - endIsland
   - powerup
-  - Enemy
   - falling
   - bullet
   - gun
   - Limit
+  - enemy
   layers:
   - Default
   - TransparentFX
