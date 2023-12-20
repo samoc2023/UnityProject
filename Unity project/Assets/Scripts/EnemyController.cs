@@ -48,6 +48,7 @@ public class EnemyController : MonoBehaviour
 
             print("hit by bullet");
             Destroy(gameObject);
+            transform.position = Vector3.zero;
 
         }
     }

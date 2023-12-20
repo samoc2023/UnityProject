@@ -194,6 +194,7 @@ public class PlayerController : MonoBehaviour
 
         if (other.gameObject.CompareTag("limit"))
         {
+            print("limit");
             //isFalling = true;
             playerRb.AddForce(Vector3.down * fallSpeed, ForceMode.Impulse);
         }
@@ -203,9 +204,9 @@ public class PlayerController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("falling"))
         {
-            isOnGround = false;
+            print("falling zone");
             //isFalling = true;
-            playerRb.AddForce(Vector3.down * fallSpeed, ForceMode.Impulse);
+            playerRb.AddForce(Vector3.down * 3, ForceMode.Impulse);
         }
     }
 
