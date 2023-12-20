@@ -182,10 +182,7 @@ public class PlayerController : MonoBehaviour
 
         }
 
-        if (other.CompareTag("Enemy"))
-        {
-            InteractWithEnemy(other.gameObject);
-        }
+        
 
         if (other.gameObject.CompareTag("falling"))
         {

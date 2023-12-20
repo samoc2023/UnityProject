@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class moveBullets : MonoBehaviour
 {
-    public float speed;
+    private Rigidbody bulletRB;
+
+    private float speed = 40.0f;
 
     // Start is called before the first frame update
     void Start()
     {
+
         gameObject.tag = "bullet";
 
     }
@@ -20,9 +23,9 @@ public class moveBullets : MonoBehaviour
         //transform.position = new Vector3(transform.position.x, 40, transform.position.z);
 
     }
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.CompareTag("enemy"))
+        if (other.gameObject.CompareTag("enemy"))
         {
 
 
@@ -30,7 +33,5 @@ public class moveBullets : MonoBehaviour
             Destroy(gameObject);
 
         }
-
-        
     }
 }

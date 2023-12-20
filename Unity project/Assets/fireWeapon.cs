@@ -13,7 +13,8 @@ public class FireWeapon : MonoBehaviour
 
     void Start()
     {
-       
+        gameObject.tag = "bullet";
+
     }
 
     void Update()

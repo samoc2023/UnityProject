@@ -10,7 +10,7 @@ public class EnemyController : MonoBehaviour
     void Start()
     {
         enemyRb = GetComponent<Rigidbody>();
-        enemyAnim = GetComponent<Animator>();
+        //enemyAnim = GetComponent<Animator>();
         gameObject.tag = "enemy";
     }
 
@@ -38,13 +38,15 @@ public class EnemyController : MonoBehaviour
 
 
 
+
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("bullet"))
         {
 
 
-            print("not destryed");
+            print("hit by bullet");
             Destroy(gameObject);
 
         }
