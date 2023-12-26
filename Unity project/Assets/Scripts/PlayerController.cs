@@ -153,6 +153,14 @@ public class PlayerController : MonoBehaviour
         }
 
 
+        if (collision.gameObject.CompareTag("Limit"))
+        {
+            print("limit");
+            //isFalling = true;
+            playerRb.AddForce(Vector3.down * fallSpeed, ForceMode.Impulse);
+        }
+
+
         // if player hits Ground
         else if (collision.gameObject.CompareTag("Death") && gameOver)
         {
@@ -171,13 +179,12 @@ public class PlayerController : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("powerup"))
+        if (other.gameObject.CompareTag("Power"))
         {
             //isFalling = false;
-            hasPowerup = true;
             Destroy(other.gameObject);
-            playerRb.AddForce(Vector3.up * 80, ForceMode.Impulse);
-            print("power");
+            playerRb.AddForce(Vector3.up * 80 * 2, ForceMode.Impulse);
+            print("power up added");
 
 
         }
@@ -192,12 +199,6 @@ public class PlayerController : MonoBehaviour
 
 
 
-        if (other.gameObject.CompareTag("limit"))
-        {
-            print("limit");
-            //isFalling = true;
-            playerRb.AddForce(Vector3.down * fallSpeed, ForceMode.Impulse);
-        }
     }
 
     private void OnTriggerStay(Collider other)
@@ -218,6 +219,7 @@ public class PlayerController : MonoBehaviour
         SceneManager.LoadScene(2);
     }
 
+    /*
     void InteractWithEnemy(GameObject enemy)
     {
         // Interact with the enemy (you can define this method in your EnemyController script)
@@ -227,6 +229,6 @@ public class PlayerController : MonoBehaviour
         {
             enemyController.TakeDamage(10); // Example: reduce enemy health by 10
         }
-    }
+    }*/
 }
 

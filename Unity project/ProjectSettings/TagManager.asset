@@ -8,12 +8,12 @@ TagManager:
   - Focal Point
   - Death
   - endIsland
-  - powerup
   - falling
   - bullet
   - gun
   - Limit
   - enemy
+  - Power
   layers:
   - Default
   - TransparentFX
