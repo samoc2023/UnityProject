@@ -4899,6 +4899,14 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 7843873bd9c3b8043a0ee72ad1c16c27, type: 2}
+    - target: {fileID: 3457546910801030053, guid: 961be46ca9a355943ae3f65c47741bb0, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3457546910801030053, guid: 961be46ca9a355943ae3f65c47741bb0, type: 3}
+      propertyPath: m_ProvidesContacts
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5124014926532804984, guid: 961be46ca9a355943ae3f65c47741bb0, type: 3}
       propertyPath: m_Size.x
       value: 5.6545897
