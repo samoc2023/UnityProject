@@ -185,7 +185,7 @@ public class PlayerController : MonoBehaviour
         {
             //isFalling = false;
             Destroy(other.gameObject);
-            playerRb.AddForce(Vector3.up * 80 * 2, ForceMode.Impulse);
+            playerRb.AddForce(Vector3.up * 100 * 3, ForceMode.Impulse);
             print("power up added");
 
 

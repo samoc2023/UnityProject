@@ -3263,7 +3263,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5090107314532382722, guid: 0242fb29d33dac24dbc5eeda59bf007c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2285
+      value: -2311
       objectReference: {fileID: 0}
     - target: {fileID: 5090107314532382722, guid: 0242fb29d33dac24dbc5eeda59bf007c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3946,11 +3946,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4085253827327064800, guid: d7217716c6118f84fa9290e9273d4ba7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2052
+      value: -2099
       objectReference: {fileID: 0}
     - target: {fileID: 4085253827327064800, guid: d7217716c6118f84fa9290e9273d4ba7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1036
+      value: 1001
       objectReference: {fileID: 0}
     - target: {fileID: 4085253827327064800, guid: d7217716c6118f84fa9290e9273d4ba7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5055,7 +5055,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5124014926532804984, guid: 961be46ca9a355943ae3f65c47741bb0, type: 3}
       propertyPath: m_Size.x
-      value: 5.6545897
+      value: 5.911033
       objectReference: {fileID: 0}
     - target: {fileID: 5124014926532804984, guid: 961be46ca9a355943ae3f65c47741bb0, type: 3}
       propertyPath: m_Size.y
@@ -5063,7 +5063,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5124014926532804984, guid: 961be46ca9a355943ae3f65c47741bb0, type: 3}
       propertyPath: m_Center.x
-      value: 0.12134143
+      value: -0.0068776053
       objectReference: {fileID: 0}
     - target: {fileID: 5124014926532804984, guid: 961be46ca9a355943ae3f65c47741bb0, type: 3}
       propertyPath: m_Center.y
@@ -5489,7 +5489,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 347410650456069437, guid: d7217716c6118f84fa9290e9273d4ba7, type: 3}
       propertyPath: m_IsKinematic
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 347410650456069437, guid: d7217716c6118f84fa9290e9273d4ba7, type: 3}
       propertyPath: m_CollisionDetection
