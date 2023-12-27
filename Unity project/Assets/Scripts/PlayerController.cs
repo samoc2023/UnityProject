@@ -169,6 +169,8 @@ public class PlayerController : MonoBehaviour
             Debug.Log("Game Over!");
             print("gameover");
             transform.position = new Vector3(transform.position.x, 40, transform.position.z);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
         }
 
 
