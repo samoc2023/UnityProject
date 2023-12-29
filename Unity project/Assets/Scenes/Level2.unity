@@ -10550,7 +10550,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2717330881234811937, guid: 599d1439b11388e4e9d60ce2bf2f854b, type: 3}
       propertyPath: speed
-      value: 8
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 2717330881234811937, guid: 599d1439b11388e4e9d60ce2bf2f854b, type: 3}
       propertyPath: gameOver
@@ -10562,7 +10562,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2717330881234811937, guid: 599d1439b11388e4e9d60ce2bf2f854b, type: 3}
       propertyPath: jumpForce
-      value: 20
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 2717330881234811937, guid: 599d1439b11388e4e9d60ce2bf2f854b, type: 3}
       propertyPath: jumpGravity
@@ -10570,7 +10570,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2717330881234811937, guid: 599d1439b11388e4e9d60ce2bf2f854b, type: 3}
       propertyPath: gravityModifier
-      value: 2
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4514957597940072594, guid: 599d1439b11388e4e9d60ce2bf2f854b, type: 3}
       propertyPath: m_LocalScale.x
