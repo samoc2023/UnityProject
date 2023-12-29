@@ -1738,7 +1738,7 @@ Transform:
   m_GameObject: {fileID: 323780282}
   serializedVersion: 2
   m_LocalRotation: {x: 0.09860391, y: 0.004414244, z: -0.0004373971, w: 0.9951169}
-  m_LocalPosition: {x: 1969, y: 427, z: 484}
+  m_LocalPosition: {x: 320, y: 452, z: 372}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -10545,6 +10545,30 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 4bcde6de2166e41e284ec46d8a01fb90, type: 3}
     - target: {fileID: 28656159583665544, guid: 599d1439b11388e4e9d60ce2bf2f854b, type: 3}
+      propertyPath: gravityModifier
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2717330881234811937, guid: 599d1439b11388e4e9d60ce2bf2f854b, type: 3}
+      propertyPath: speed
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2717330881234811937, guid: 599d1439b11388e4e9d60ce2bf2f854b, type: 3}
+      propertyPath: gameOver
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2717330881234811937, guid: 599d1439b11388e4e9d60ce2bf2f854b, type: 3}
+      propertyPath: fallSpeed
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2717330881234811937, guid: 599d1439b11388e4e9d60ce2bf2f854b, type: 3}
+      propertyPath: jumpForce
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2717330881234811937, guid: 599d1439b11388e4e9d60ce2bf2f854b, type: 3}
+      propertyPath: jumpGravity
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2717330881234811937, guid: 599d1439b11388e4e9d60ce2bf2f854b, type: 3}
       propertyPath: gravityModifier
       value: 2
       objectReference: {fileID: 0}
